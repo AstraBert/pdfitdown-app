@@ -77,7 +77,7 @@ async def custom_identifier(request: Request) -> str:
     "/conversions",
     dependencies=[
         Depends(verify_token),
-        Depends(RateLimiter(times=10, seconds=60, identifier=custom_identifier)),
+        Depends(RateLimiter(times=100, seconds=60, identifier=custom_identifier)),
     ],
 )
 async def conversions(
@@ -128,7 +128,7 @@ async def conversions(
             {
                 "write_latency_s": file_write - start,
                 "conversion_latency_s": conversion - start,
-                "total_lantency_s": (file_write - start) + (conversion - start),
+                "total_latency_s": (file_write - start) + (conversion - start),
             }
         )
         logger.debug(
