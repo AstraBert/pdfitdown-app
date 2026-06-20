@@ -1,0 +1,16 @@
+services:
+  pdfitdown-app-backend:
+    image: pdfitdown-app-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9999:9999
+    environment:
+      REDIS_URI: ${REDIS_URI}
+      AXIOM_ENDPOINT: ${AXIOM_ENDPOINT}
+      AXIOM_DATASET_NAME: ${AXIOM_DATASET_NAME}
+      AXIOM_LOGS_COLLECTION: ${AXIOM_LOGS_COLLECTION}
+      AXIOM_API_KEY: ${AXIOM_API_KEY}
+      WORKOS_CLIENT_ID: ${WORKOS_CLIENT_ID}
+      WORKOS_API_KEY: ${WORKOS_API_KEY}
