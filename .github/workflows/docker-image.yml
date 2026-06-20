@@ -4,6 +4,11 @@ on:
   push:
     tags: ["v*.*.*"]
     branches: [main]
+    paths-ignore:
+      - frontend/**
+      - README.md
+      - LICENSE
+      - CONTRIBUTING.md
 
 env:
   REGISTRY: ghcr.io

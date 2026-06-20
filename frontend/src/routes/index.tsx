@@ -217,8 +217,11 @@ function App() {
 
       <section className="mt-8 grid gap-4 sm:grid-cols-3">
         {[
-          ['Any Format', 'Word, PowerPoint, images, HTML, and more.'],
-          ['Fast & Secure', 'Files are processed in-memory and never stored.'],
+          ['Any Format', 'Word, PowerPoint, images, markdown and more...'],
+          [
+            'Fast & Secure',
+            'Files are stored temporarily for processing and deleted immediately after.',
+          ],
           ['High Fidelity', 'Preserves fonts, layouts, and styling.'],
         ].map(([t, d], i) => (
           <article
