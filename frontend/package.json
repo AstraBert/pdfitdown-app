@@ -60,8 +60,12 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "core-js",
       "esbuild",
-      "lightningcss"
+      "lightningcss",
+      "sharp",
+      "unrs-resolver",
+      "workerd"
     ]
   }
 }
