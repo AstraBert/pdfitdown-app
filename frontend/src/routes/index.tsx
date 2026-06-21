@@ -20,9 +20,10 @@ function App() {
 
   const track = useCallback(
     (event: string, props?: Record<string, unknown>) => {
-      posthog.capture(event, props)
+      const propsWithUser = { user_id: user?.id, ...props }
+      posthog.capture(event, propsWithUser)
     },
-    [posthog],
+    [posthog, user],
   )
 
   const handleFile = (f: File | null) => {
