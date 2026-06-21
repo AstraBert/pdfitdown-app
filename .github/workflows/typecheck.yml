@@ -35,7 +35,7 @@ jobs:
         working-directory: frontend
 
   typecheck-backend:
-    name: Lint Backend
+    name: Typecheck Backend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
