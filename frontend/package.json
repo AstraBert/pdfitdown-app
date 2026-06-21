@@ -14,7 +14,8 @@
     "lint": "eslint",
     "format": "prettier --write . && eslint --fix",
     "check": "prettier --check .",
-    "deploy": "pnpm run build && wrangler deploy"
+    "deploy": "pnpm run build && wrangler deploy",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",
