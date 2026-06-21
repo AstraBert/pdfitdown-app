@@ -60,14 +60,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "core-js",
       "esbuild",
-      "lightningcss",
-      "sharp",
-      "unrs-resolver"
-    ],
-    "ignoredBuiltDependencies": [
-      "workerd"
+      "lightningcss"
     ]
   }
 }
