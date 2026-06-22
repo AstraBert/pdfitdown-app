@@ -45,3 +45,24 @@ class MockTrace:
 
     def get_current_span(self) -> MockSpan:
         return self.span
+
+
+class MockLogger:
+    def __init__(self) -> None:
+        self.logs = {"info": [], "error": [], "exception": [], "debug": []}
+
+    def info(self, message: str, *args: Any, extra: dict[str, Any]) -> None:
+        self.logs["info"].append(message)
+        assert "request_id" in extra
+
+    def debug(self, message: str, *args: Any, extra: dict[str, Any]) -> None:
+        self.logs["debug"].append(message)
+        assert "request_id" in extra
+
+    def exception(self, message: str, *args: Any, extra: dict[str, Any]) -> None:
+        self.logs["exception"].append(message)
+        assert "request_id" in extra
+
+    def error(self, message: str, *args: Any, extra: dict[str, Any]) -> None:
+        self.logs["error"].append(message)
+        assert "request_id" in extra
