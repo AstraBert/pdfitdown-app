@@ -156,7 +156,7 @@ async def conversions(
                 while chunk := await f.read(65536):  # 64KB chunks
                     yield chunk
 
-        logging.info(f"Done in {time.time() - start}s")
+        logger.info(f"Done in {time.time() - start}s", extra={"request_id": request_id})
         return StreamingResponse(
             iterfile(),
             media_type="application/octet-stream",
